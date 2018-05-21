@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.thetvdb.alfred-search</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>43566618-B3FF-41EE-AE32-ABC916450DBE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>43566618-B3FF-41EE-AE32-ABC916450DBE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dub</string>
+	<key>description</key>
+	<string>search for tv series on thetvdb.com with "tv" keyword</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>thetvdb search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tv</string>
+				<key>subtext</key>
+				<string>thetvdb.com search</string>
+				<key>text</key>
+				<string>tv</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string># small script to replace '.' (points) with spaces
+# so you can search for "Lost.in.Space"
+
+import sys
+
+query = sys.argv[1]
+query = query.replace('.', ' ')
+
+sys.stdout.write(query)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>43566618-B3FF-41EE-AE32-ABC916450DBE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.thetvdb.com/search?q={query}&amp;l=de</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
+		<dict>
+			<key>xpos</key>
+			<integer>530</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>43566618-B3FF-41EE-AE32-ABC916450DBE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<dict>
+			<key>xpos</key>
+			<integer>80</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
